@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Search, Shield, Zap, Crown, CheckCircle2, X, ArrowRight } from 'lucide-react';
+import { Search, Shield, Crown, CheckCircle2, X, ArrowRight } from 'lucide-react';
 import { UserPlan } from '../types';
+import { FileKitLogo } from './FileKitLogo';
 
 interface HeaderProps {
   userPlan: UserPlan;
@@ -34,13 +35,11 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Brand Logo & Tagline */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-400 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-            <Zap className="w-5 h-5 fill-white" />
-          </div>
+          <FileKitLogo size="md" showText={false} />
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-bold text-xl text-slate-900 tracking-tight font-display">
-                FILEKIT <span className="text-blue-600">AI</span>
+              <span className="font-extrabold text-xl text-slate-900 tracking-tight font-display">
+                FILEKIT <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">AI</span>
               </span>
               <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
                 <Shield className="w-3 h-3 text-blue-600" /> 100% In-Memory Privacy

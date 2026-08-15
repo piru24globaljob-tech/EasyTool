@@ -1,5 +1,6 @@
 import React from 'react';
-import { Zap, Shield, Heart } from 'lucide-react';
+import { Shield, Heart } from 'lucide-react';
+import { FileKitLogo } from './FileKitLogo';
 
 export const Footer: React.FC = () => {
   return (
@@ -7,13 +8,8 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         {/* Col 1 Brand */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-400 text-white flex items-center justify-center font-bold shadow-md shadow-blue-500/20">
-              <Zap className="w-4 h-4 fill-white" />
-            </div>
-            <span className="font-bold text-slate-900 text-base tracking-tight font-display">
-              FILEKIT <span className="text-blue-600">AI</span>
-            </span>
+          <div className="mb-3">
+            <FileKitLogo size="sm" showText={true} />
           </div>
           <p className="text-slate-500 text-xs leading-relaxed mb-4">
             The next-generation AI-powered file workspace combining 40+ PDF, Image, Document, Privacy, and Workflow tools.

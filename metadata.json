@@ -1,0 +1,8 @@
+{
+  "name": "FileKit AI",
+  "description": "All Your File Tools in One Place — AI-powered PDF, Image, Document, Privacy & One-Click Workflow Suite",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

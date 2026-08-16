@@ -35,20 +35,20 @@ export const FileKitLogo: React.FC<FileKitLogoProps> = ({
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <div className="relative group cursor-pointer">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400 rounded-xl blur-[2px] opacity-75 group-hover:opacity-100 transition duration-200"></div>
+      <div className="relative group cursor-pointer perspective-500">
+        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-400 rounded-2xl blur-xs opacity-80 group-hover:opacity-100 transition duration-300"></div>
         <img
           src={logoImg}
-          alt="FileKit AI Logo"
+          alt="ToolKit AI Logo"
           referrerPolicy="no-referrer"
-          className={`relative object-cover shadow-md shadow-blue-500/25 border border-white/20 transition-transform duration-200 group-hover:scale-105 ${imgSizeMap[size]}`}
+          className={`relative object-cover shadow-[0_8px_16px_rgba(37,99,235,0.35)] border-t border-white/60 border-b-2 border-indigo-900 transition-all duration-300 group-hover:scale-105 group-hover:rotate-3 ${imgSizeMap[size]}`}
         />
       </div>
 
       {showText && (
         <div className="flex flex-col">
-          <span className={`font-black text-slate-900 tracking-tight font-display ${textSizeMap[size]}`}>
-            FILEKIT <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">AI</span>
+          <span className={`font-black text-slate-900 tracking-tight font-display drop-shadow-2xs ${textSizeMap[size]}`}>
+            TOOLKIT <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent">AI</span>
           </span>
         </div>
       )}

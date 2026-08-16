@@ -1,1 +1,257 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .perspective-500 {
+    perspective: 500px;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-1500 {
+    perspective: 1500px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* 4K Ultra-Crisp Rendering & Hardware Acceleration */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3D Isometric Background Mesh */
+.bg-grid-3d {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.12) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  transform: perspective(700px) rotateX(28deg);
+  transform-origin: top center;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 70%, transparent 100%);
+}
+
+/* 4K Glowing Border Beam */
+@keyframes borderBeam {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes holographicRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes laserSweep {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(300%) rotate(45deg);
+  }
+}
+
+/* 4K Animated Glow Ring */
+@keyframes pulseGlow4K {
+  0%, 100% {
+    box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.4), 0 0 10px -2px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 45px 5px rgba(56, 189, 248, 0.7), 0 0 20px 2px rgba(99, 102, 241, 0.5);
+  }
+}
+
+.animate-glow-4k {
+  animation: pulseGlow4K 3.5s ease-in-out infinite;
+}
+
+/* 3D Depth Card Shadow & 4K Layering */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  box-shadow: 
+    0 2px 4px 0 rgba(16, 24, 40, 0.04),
+    0 6px 12px -2px rgba(16, 24, 40, 0.06),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  will-change: transform, box-shadow;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) scale(1.02) rotateX(4deg) rotateY(-2deg);
+  box-shadow: 
+    0 25px 40px -12px rgba(37, 99, 235, 0.22),
+    0 12px 20px -6px rgba(56, 189, 248, 0.18),
+    0 0 0 1px rgba(59, 130, 246, 0.4),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+/* 4K Ultra-Smooth Floating Animations */
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-4deg);
+  }
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.08);
+  }
+}
+
+@keyframes floatReverse3d {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(12px) scale(1.05) rotateX(-4deg) rotateY(5deg);
+  }
+}
+
+.animate-float-3d {
+  animation: float3d 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-orb {
+  animation: floatOrb 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-reverse {
+  animation: floatReverse3d 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 4K Tactile 3D Buttons with Deep Hydraulic Feedback */
+.btn-3d-blue {
+  position: relative;
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  border-bottom: 3.5px solid #1d4ed8;
+  box-shadow: 
+    0 8px 16px -2px rgba(37, 99, 235, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-3d-blue:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 14px 24px -4px rgba(37, 99, 235, 0.5),
+    0 0 12px 2px rgba(56, 189, 248, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.btn-3d-blue:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: 
+    0 3px 6px rgba(37, 99, 235, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-3d-white {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-bottom: 3px solid #cbd5e1;
+  box-shadow: 
+    0 6px 12px -2px rgba(0, 0, 0, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-3d-white:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  border-bottom-color: #60a5fa;
+  box-shadow: 
+    0 10px 18px -3px rgba(59, 130, 246, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.btn-3d-white:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 4K Glass Specular Reflection Sheen */
+.glass-specular-3d {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-specular-3d::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: linear-gradient(
+    65deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.12) 42%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.12) 58%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.glass-specular-3d:hover::after {
+  transform: translateX(120%);
+}
+
+/* 4K Orbit Ring Animation */
+@keyframes orbit4K {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterOrbit4K {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-orbit-4k {
+  animation: orbit4K 18s linear infinite;
+}
+
+.animate-counter-orbit-4k {
+  animation: counterOrbit4K 18s linear infinite;
+}

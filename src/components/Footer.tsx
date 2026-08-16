@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
-        <p>© 2026 FileKit AI. All rights reserved. Built with Google AI Studio & Gemini 3.6 Flash.</p>
+        <p>© 2026 ToolKit AI. All rights reserved. Built with Google AI Studio & Gemini 3.6 Flash.</p>
         <p className="flex items-center gap-1">
           Crafted with <Heart className="w-3 h-3 text-rose-500 fill-rose-500" /> for fast, secure file productivity.
         </p>

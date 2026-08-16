@@ -6,6 +6,7 @@ import { PrivacyBanner } from './components/PrivacyBanner';
 import { Footer } from './components/Footer';
 import { ToolRunnerModal } from './components/ToolRunnerModal';
 import { PricingModal } from './components/PricingModal';
+import { ParticleCanvas4K } from './components/ParticleCanvas4K';
 import { WorkspaceFile, UserPlan } from './types';
 import { getPDFPageCount } from './lib/pdfUtils';
 import { readFileAsDataURL } from './lib/documentUtils';
@@ -13,7 +14,6 @@ import { readFileAsDataURL } from './lib/documentUtils';
 export default function App() {
   const [userPlan, setUserPlan] = useState<UserPlan>('free');
   const [isPricingOpen, setIsPricingOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [favorites, setFavorites] = useState<string[]>(['merge-pdf', 'ai-pdf-chat', 'compress-pdf', 'sign-pdf']);
 
   const [workspaceFiles, setWorkspaceFiles] = useState<WorkspaceFile[]>([]);
@@ -98,22 +98,24 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50/70 via-white to-blue-50/50 text-slate-800 flex flex-col font-sans antialiased relative overflow-x-hidden">
-      {/* Blue & White Ambient Lighting Effects */}
-      <div className="fixed top-0 right-0 w-96 h-96 bg-blue-400/15 blur-[120px] rounded-full -mr-48 -mt-48 pointer-events-none" />
-      <div className="fixed bottom-0 left-0 w-80 h-80 bg-sky-300/20 blur-[100px] rounded-full -ml-32 -mb-32 pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-b from-slate-100/90 via-blue-50/40 to-slate-100 text-slate-800 flex flex-col font-sans antialiased relative overflow-x-hidden">
+      {/* 4K Interactive Particle Canvas Background */}
+      <ParticleCanvas4K />
+
+      {/* 4K Dynamic Ambient Lighting & Depth Orbs */}
+      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-blue-500/15 blur-[140px] rounded-full -mr-48 -mt-48 pointer-events-none animate-float-orb" />
+      <div className="fixed bottom-0 left-0 w-[450px] h-[450px] bg-sky-400/20 blur-[130px] rounded-full -ml-32 -mb-32 pointer-events-none animate-float-reverse" />
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-400/10 blur-[160px] rounded-full pointer-events-none" />
 
       {/* Header Bar */}
       <Header
         userPlan={userPlan}
         setUserPlan={setUserPlan}
         openPricing={() => setIsPricingOpen(true)}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
         activeFileCount={workspaceFiles.length}
       />
 
-      {/* Flagship Smart Workspace Component */}
+      {/* Flagship 4K Smart Workspace Component */}
       <SmartWorkspaceBar
         files={workspaceFiles}
         onAddFiles={handleAddFiles}
@@ -124,11 +126,9 @@ export default function App() {
         onRunWorkflow={handleOpenWorkflow}
       />
 
-      {/* Main Tool Catalog Grid */}
+      {/* Main 4K Tool Catalog Grid */}
       <main className="flex-1">
         <ToolGrid
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
           onSelectTool={handleOpenTool}
           favorites={favorites}
           onToggleFavorite={handleToggleFavorite}
